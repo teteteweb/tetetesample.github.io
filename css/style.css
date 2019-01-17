@@ -393,7 +393,7 @@ header {
 }
 .user::after {
   content: "";
-  background: url(../img/tv-1015427_1920.jpg) no-repeat center center;
+  background: url(../tv-1015427_1920.jpg) no-repeat center center;
   background-size:cover;
   opacity: 0.5;
   top: 0;
