@@ -1,0 +1,564 @@
+@charset "utf-8";
+
+/* 初期化 */
+html, body, h1, h2, h3, h4, ul, ol, dl, li, dt, dd, p, div, span, img, a, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align:baseline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Raleway, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* 共通部分 */
+.inner {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.main-title {
+  text-align: center;
+}
+.main-title span{
+  font-size: 2.8rem;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 30px;
+}
+.main-title span:before,
+.main-title span:after{
+  content:'';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+.main-title span:before {
+  border-left: solid 3px #5767bf;
+  border-top: solid 3px #5767bf;
+  top:0;
+  left: 0;
+}
+.main-title span:after {
+  border-right: solid 3px #5767bf;
+  border-bottom: solid 3px #5767bf;
+  bottom:0;
+  right: 0;
+}
+
+/* トップ */
+.top-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+.top-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: #fff;
+  font-weight: bold; /*太字に*/
+  font-size: 8rem;/*サイズ2倍*/
+  z-index: 20;
+}
+/* スライドショー */
+  .main_img {
+    z-index:10;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-animation: anime 36s 0s infinite;
+    animation: anime 36s 0s infinite;
+    }
+.main_img:nth-of-type(2) {
+      -webkit-animation-delay: 6s;
+      animation-delay: 6s; }
+
+    .main_img:nth-of-type(3) {
+      -webkit-animation-delay: 12s;
+      animation-delay: 12s; }
+
+    .main_img:nth-of-type(4) {
+      -webkit-animation-delay: 18s;
+      animation-delay: 18s; }
+
+    .main_img:nth-of-type(5) {
+      -webkit-animation-delay: 24s;
+      animation-delay: 24s; }
+
+    .main_img:nth-of-type(6) {
+      -webkit-animation-delay: 30s;
+      animation-delay: 30s; }
+@keyframes anime {
+  0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+        transform: scale(1.2) ;
+         z-index:9;
+    }
+    100% { opacity: 0 }
+}
+
+/* ヘッダー */
+.header-menu-tabpc {
+  display: none;
+}
+header {
+  width: 100%;
+  background-color: #000;
+  z-index: 200;
+}
+.header-in {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.header-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-right: auto;
+  padding-left: 5px;
+}
+.header-right {
+  position: relative;
+}
+
+
+.header-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.header-icon span {
+  position: absolute;
+  left: 6px;
+  width: 50%;
+	height: 2px;
+  background-color: #fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+.header-icon span:nth-of-type(1) {
+    top: 10px;
+	/* transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg); */
+}
+.header-icon span:nth-of-type(2) {
+    top: 15px;
+	/* transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg); */
+}
+.header-icon span:nth-of-type(3) {
+    top: 20px;
+	/* transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg); */
+}
+.header-menu {
+  display: none;
+  width: 200px;
+  border-radius: 5px;
+  background-color: #000;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  z-index: 5;
+}
+.header-menu ul {
+  /* padding: 5px; */
+}
+.header-menu ul li {
+  border-bottom: 1px solid #fff;
+ padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.header-menu ul li a {
+  color: #fff;
+  padding-left: 5px;
+}
+/* ヘッダー　タブレット・PC */
+@media all and (min-width: 600px) {
+  .header-icon,
+  header-menu {
+    display: none;
+  }
+  .header-menu-tabpc {
+    display: block;
+  }
+  .header-menu-tabpc {
+    width: 450px;
+  }
+  .header-tabpc-lists {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5px;
+  }
+  .header-tabpc-list {
+    border-left: 1px solid #fff;
+  }
+  .header-tabpc-list:first-child {
+    border: none;
+  }
+  .header-tabpc-list a {
+    color:#fff;
+    font-size: 1.3rem;
+    padding-left: 7px;
+  }
+  }
+
+
+/* ヘッダーをtopで固定 */
+.header-fixed {
+  position: fixed;
+  top: 0;　/* 一番上なら0pxに指定してください */
+  background: #000;　/* 不要であればいらないです */
+  width: 100%;
+}
+
+
+/* サービス説明 */
+.description {
+  padding: 10px;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: .6em 2.5em .6em 2em;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+}
+.button::after {
+  position: absolute;
+  content: '\f061';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  top: 50%;
+  right: .4em;
+  left: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.outline-box {
+  padding: 0.5em 1em;
+  margin: 2em 2em;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+/* 例 */
+.example {
+  padding: 10px;
+}
+.my-parts {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  margin-top: 10px;
+}
+.my-parts table {
+  border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,.1);
+  table-layout: fixed;
+  width: 430px;
+  margin: 0 auto;
+}
+
+@media all and (min-width: 600px) {
+  .my-parts table {
+    width: 90%;
+  }
+  }
+
+.my-parts th, .my-parts td {
+  border: 1px solid rgba(0,0,0,.1);
+  padding: .6em;
+  text-align: center;
+  background: #fff;
+}
+.my-parts th {
+  background: #009688;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* サービスの特徴・メリット */
+
+.features {
+  width: 100%;
+  background: #1253A4;
+  color: #fff;
+  padding: 20px 0;
+}
+.features ul {
+  color: #1e366a;
+  border-top: solid #fff 1px;/*上のボーダー*/
+  border-bottom: solid #fff 1px;/*下のボーダー*/
+  padding: 0.5em 0 0.5em 1.5em;
+  margin: 10px 20px;  
+  list-style-type: disc;
+}
+.features ul li {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+.features .main-title span:before {
+  border-left: solid 3px #fff;
+  border-top: solid 3px #fff;
+}
+.features .main-title span:after {
+  border-right: solid 3px #fff;
+  border-bottom: solid 3px #fff;
+}
+
+/* 利用者の声 */
+.user {
+  /* width: 100%; */
+  display: block;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 30px 0;
+}
+.user::after {
+  content: "";
+  background: url(../img/tv-1015427_1920.jpg) no-repeat center center;
+  background-size:cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.user-flex {
+  display: flex;
+  flex-direction: column;
+}
+.user-item {
+  max-width: 80%;
+  padding: 50px 1em;
+  margin: 130px auto 20px;
+  background: transparent;
+  border: solid 5px white;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+.user-item img {
+  width: 130px;
+  height: auto;
+  border-radius: 100%;
+  border:5px solid #fff;
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0); /* Safari用 */
+  transform: translate(-50%, 0);
+}
+.user-item p {
+  text-align: center;
+}
+.user-item-card {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
+  text-align: left;
+  background-color: #fff;
+  margin: 0 auto 30px;
+  transition: all 0.3s ease 0s;
+}
+.user-item-card img {
+  width: 100%;
+  vertical-align: bottom;
+  margin: 0;
+}
+.user-item-card-body {
+  color: #000;
+  padding: 2em;
+  text-align: center;
+}
+.user-item-card-body p:nth-child(1) {
+  text-align: center;
+}
+/* 利用者の声　PC */
+@media all and (min-width: 960px) {
+  .user {
+    padding: 30px 30px;
+  }
+  .user-flex {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .user-item {
+    width: calc(33.33333333% - 34px);
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+  .user-item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .user-item-card {
+    width: calc(33.33333333% - 34px);
+    margin-right: 50px;
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+  .user-item-card:nth-child(3n){
+    margin-right: 0;
+  }
+  }
+
+/* 問い合わせ */
+form {
+  width: 80%;
+  padding: 16px;
+  margin: 0 auto;
+}
+input {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  width: 100%;
+  font-style: 1.6rem;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+textarea {
+  margin: 0.5em 0;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  width: 100%;
+  height: 12em;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+}
+
+/* フッター */
+footer {
+  background-color: #1253A4;
+  padding: 10px;
+}
+footer li a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.twitter {
+  margin-top: 30px;
+  width: 90%;
+  height: 400px;
+  overflow: scroll;
+}
+
+/* トップへ戻る */
+.floating {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  display: none;
+  width:30px;
+  z-index: 5;
+}
+.floating a {
+  display: block;
+  color: #fff;
+  background: #000;
+  padding: 8px;
+  text-decoration: none;
+  opacity: 0.3;
+  font-size: 1.5rem;
+}
+.floating a:hover {
+  opacity: 1;
+}
+
+.twitter-share {
+  display: inline-block;
+  font-size: 1.5rem;
+  color:#fff;
+  background-color: #1da1f2;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  opacity: 0.9;
+}
+.twitter-share:hover {
+  opacity: 1;
+  cursor: pointer;
+}
