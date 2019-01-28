@@ -153,6 +153,7 @@ header {
   width: 100%;
   background-color: #000;
   z-index: 200;
+  
 }
 .header-in {
   display: flex;
@@ -290,7 +291,27 @@ header {
   color: #fff;
   font-size: 1.6rem;
   cursor: pointer;
-  position: relative;
+  position: relative; /* buttonに絡む部分全てをposition:staticにすることでz-indexを効かせる */
+  overflow: hidden; /* button要素の外に出る斜めエフェクトを隠す */
+}
+.button span {
+  position: relative; /* buttonに絡む部分全てをposition:staticにすることでz-indexを効かせる */
+  z-index: 2; /* テキストを一番上に表示する */
+}
+.button::before {
+  position: absolute;
+  content: ""; /* ここに斜めのエフェクトを入れている */
+  top: 0px;
+  height: 100%;
+  left: -25%;
+  width: 0%; /* hover前は横幅０にしてエフェクトを隠す */
+  background-color: #041230;
+  transform: skew(50deg); /* 斜めにしてる */
+  transition-duration: .6s; /* 変化にかける時間 */
+  z-index: 1;
+}
+.button:hover:before {
+  width: 180%; /* エフェクト起動 */
 }
 .button::after {
   position: absolute;
@@ -302,6 +323,7 @@ header {
   left: auto;
   bottom: auto;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .outline-box {
@@ -393,7 +415,7 @@ header {
 }
 .user::after {
   content: "";
-  background: url(../tv-1015427_1920.jpg) no-repeat center center;
+  background: url(../img/tv-1015427_1920.jpg) no-repeat center center;
   background-size:cover;
   opacity: 0.5;
   top: 0;
